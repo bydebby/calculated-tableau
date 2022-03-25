@@ -93,3 +93,13 @@
   ELSE INT([stock a]) + INT([stock c])
   END
   ```
+
+# COUNT INCLUDED VALUE 0
+* Calcultae IF ELSE Included Value 0 -> [Jumlah]
+
+  >IF COUNT([id]) > 0 THEN COUNT([id]) ELSE 0 END
+
+* Calculated WINDOW SUM
+
+  >WINDOW_SUM([Jumlah], 0, 0)
+
