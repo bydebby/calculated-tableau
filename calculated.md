@@ -64,6 +64,8 @@
   END
   ```
 # Filter
+* Filter Dexamethasone is Cairan Injeksi
+  
   ```
   IF [kelompokbahanaktif]='DEXAMETHASONE' 
   AND [Sediaan] = 'CAIRAN INJEKSI'
@@ -81,7 +83,15 @@
   THEN [Sediaan]
   END
   ```
+* Filter last 5 months
   
+  ```
+  DATEDIFF('month',[created_at],TODAY()) = 0 or
+  DATEDIFF('month',[created_at],TODAY()) = 1 or
+  DATEDIFF('month',[created_at],TODAY()) = 2 or
+  DATEDIFF('month',[created_at],TODAY()) = 3 or
+  DATEDIFF('month',[created_at],TODAY()) = 4
+  ```
 # IF ELSE 
   ```
   Example: 
@@ -103,3 +113,22 @@
 
   >WINDOW_SUM([Jumlah], 0, 0)
 
+# CASE WHEN MONTH
+  
+  `Example bulan_tahun = 202201`
+  ```
+  CASE RIGHT([bulan_tahun],2)
+  WHEN '01' THEN 'Januari'
+  WHEN '02' THEN 'Februari'
+  WHEN '03' THEN 'Maret'
+  WHEN '04' THEN 'April'
+  WHEN '05' THEN 'Mei'
+  WHEN '06' THEN 'Juni'
+  WHEN '07' THEN 'Juli'
+  WHEN '08' THEN 'Agustus'
+  WHEN '09' THEN 'September'
+  WHEN '10' THEN 'Oktober'
+  WHEN '11' THEN 'November'
+  WHEN '12' THEN 'Desember'
+  END
+  ```
